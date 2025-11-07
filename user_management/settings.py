@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+from os import getenv
 
 # To keep secret keys in environment variables
 from dotenv import load_dotenv # type: ignore
@@ -92,6 +93,23 @@ WSGI_APPLICATION = 'user_management.wsgi.application'
 
 
 DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': getenv('neondb?sslmode=require&channel_binding=require'),
+    'USER': getenv('neondb_owner'),
+    'PASSWORD': getenv('npg_BmS9Ut8Pwxdj'),
+    'HOST': getenv('ep-delicate-wildflower-agt8k201-pooler.c-2.eu-central-1.aws.neon.tech'),
+    'PORT': getenv('5432'),
+    'OPTIONS': {
+      'sslmode': 'require',
+    },
+    'DISABLE_SERVER_SIDE_CURSORS': True,
+  }
+}
+
+"""
+
+DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.postgresql',
          'NAME': 'postgres',
@@ -102,7 +120,7 @@ DATABASES = {
      }
  }
 
-"""
+
 
 DATABASES = {
     'default': {

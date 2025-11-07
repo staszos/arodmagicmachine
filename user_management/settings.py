@@ -31,7 +31,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production! (False - перед выпуском)
 DEBUG = True 
 # ['*']
-ALLOWED_HOSTS = ['arodmagicmachine.vercel.app'] # https://ivri.me/
+ALLOWED_HOSTS = ['*'] # https://ivri.me/
 
 
 # Application definition
@@ -90,7 +90,18 @@ WSGI_APPLICATION = 'user_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
+
+
+
+
+"""
 
 DATABASES = {
      'default': {
@@ -104,8 +115,6 @@ DATABASES = {
  }
 
 
-
-"""
 
 DATABASES = {
     'default': {
@@ -154,12 +163,7 @@ DATABASES = {
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
 """
 
 # Password validation

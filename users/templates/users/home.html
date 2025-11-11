@@ -34,7 +34,11 @@
 
 <h2 class="display-5">      Новости       </h2>
 
-<p> Ну че, пеерезд получается. Если нашли баги - пишите, буду тупить. (про темную тему уже даже тут записал) </p> <!--Новостей пока нет. -->
+<p> Ну че, пеерезд получается. Если нашли баги - пишите, буду тупить. (про темную тему уже даже тут записал) 
+</p> <!--Новостей пока нет. -->
+
+<p> Анонсированные изменения по донату (я нахрен переделывают пол системы), теперь патерн такой - за цены отвечаю я. Но скорость ответа будет "как всегда". Грим теперь только за расписание и всякую хуйню по серваку. Дальше, все старые донаты остаются в силе и работают (процентно) - т.е. если вы купили дракона на 10к (по старым ценам), а его цена выросла - вы остались при своем (крч ничего не отобрали, это к новым покупкам относиться, не ссыте. Чуть позже понятнее распишу все.)
+</p>
 
 <hr class="my-4">
 
@@ -45,15 +49,32 @@
          <a class="btn btn-danger btn-lg" href="{% url 'main_donation_structure' %}" role="button">Лут боксы</a>
         </p>
 <p>
-        <a class="btn btn-danger btn-lg" href="{% url 'main_donation_structure' %}" role="button">Предметы</a>
-        <a class="btn btn-danger btn-lg" href="{% url 'main_donation_structure' %}" role="button">Расы</a>
+        <a class="btn btn-warning btn-lg" href="{% url 'arod_main_item_list_donat_1' %}" role="button">Предметы</a>
+        <a class="btn btn-warning btn-lg" href="{% url 'arod_main_race_donat' %}" role="button">Расы</a>
         <a class="btn btn-danger btn-lg" href="{% url 'main_donation_structure' %}" role="button">Навыки</a>
          
          <a class="btn btn-primary btn-lg" href="{% url 'arod_main_mix_donat_1' %}" role="button">Прочее</a>
     </p>
 <p>
 <a class="btn btn-primary btn-lg" href="{% url 'arod_main_other_services' %}" role="button">Прочие услуги</a>
+<a class="btn btn-warning btn-lg" href="{% url 'arod_main_magic_list_donat_1' %}" role="button">Магия</a>
+<a class="btn btn-warning btn-lg" href="{% url 'arod_main_team_list_donat_1' %}" role="button">Компаньоны и питомцы</a>
 </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <hr class="my-4">

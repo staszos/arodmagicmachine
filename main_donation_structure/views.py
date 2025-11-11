@@ -19,7 +19,14 @@ def arod_main_mix_donat_1(request):
     return render(request, 'main_donation_structure/arod_main_mix_donat_1.html')
 def arod_main_other_services(request):
     return render(request, 'main_donation_structure/arod_main_other_services.html')
-
+def arod_main_race_donat(request):
+    return render(request, 'main_donation_structure/arod_main_race_donat.html')
+def arod_main_item_list_donat_1(request):
+    return render(request, 'main_donation_structure/arod_main_item_list_donat_1.html')
+def arod_main_team_list_donat_1(request):
+    return render(request, 'main_donation_structure/arod_main_team_list_donat_1.html')
+def arod_main_magic_list_donat_1(request):
+    return render(request, 'main_donation_structure/arod_main_magic_list_donat_1.html')
 
 
 

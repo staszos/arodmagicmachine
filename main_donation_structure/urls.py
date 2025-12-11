@@ -16,6 +16,10 @@ urlpatterns = [
     path('arod_main_item_list_donat_1', views.arod_main_item_list_donat_1, name='arod_main_item_list_donat_1'),
     path('arod_main_team_list_donat_1', views.arod_main_team_list_donat_1, name='arod_main_team_list_donat_1'),
     path('arod_main_magic_list_donat_1', views.arod_main_magic_list_donat_1, name='arod_main_magic_list_donat_1'),
+    path('arod_main_begin', views.arod_main_begin, name='arod_main_begin'),
+
+
+
 
 ]
 

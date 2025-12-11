@@ -27,6 +27,10 @@ def arod_main_team_list_donat_1(request):
     return render(request, 'main_donation_structure/arod_main_team_list_donat_1.html')
 def arod_main_magic_list_donat_1(request):
     return render(request, 'main_donation_structure/arod_main_magic_list_donat_1.html')
+def arod_main_begin(request):
+    return render(request, 'main_donation_structure/arod_main_begin.html')
+
+
 
 
 

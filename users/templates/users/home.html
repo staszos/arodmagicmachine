@@ -85,7 +85,11 @@
 <h2 class="display-5">      Платные Услуги       </h2>
 
 
-   
+   <!--
+{% url 'arod_main_race_donat' %}
+   {% url 'arod_main_magic_list_donat_1' %}
+   {% url 'arod_main_team_list_donat_1' %}
+   -->
    
        <p>
         <a class="btn btn-primary btn-lg" href="{% url 'arod_main_role_tariff' %}" role="button">Тарифы и Правила (Ролки)</a>
@@ -94,15 +98,15 @@
         </p>
 <p>
         <a class="btn btn-warning btn-lg" href="{% url 'arod_main_item_list_donat_1' %}" role="button">Предметы</a>
-        <a class="btn btn-warning btn-lg" href="{% url 'arod_main_race_donat' %}" role="button">Расы</a>
+        <a class="btn btn-danger btn-lg" href="" role="button">Расы</a>
         <a class="btn btn-danger btn-lg" href="" role="button">Навыки</a>
          
          <a class="btn btn-primary btn-lg" href="{% url 'arod_main_mix_donat_1' %}" role="button">Прочее</a>
     </p>
 <p>
 <a class="btn btn-primary btn-lg" href="{% url 'arod_main_other_services' %}" role="button">Прочие услуги</a>
-<a class="btn btn-warning btn-lg" href="{% url 'arod_main_magic_list_donat_1' %}" role="button">Магия</a>
-<a class="btn btn-warning btn-lg" href="{% url 'arod_main_team_list_donat_1' %}" role="button">Компаньоны и питомцы</a>
+<a class="btn btn-danger btn-lg" href="" role="button">Магия</a>
+<a class="btn btn-danger btn-lg" href="" role="button">Компаньоны и питомцы</a>
 </p>
 
 

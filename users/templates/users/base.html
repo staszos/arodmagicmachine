@@ -530,14 +530,16 @@ margin-left: 1vw;
             
             
             <div class="button-container">
-                <button a href="https://docs.google.com/spreadsheets/d/1X83ygsOUW-tGSfunP-v4c65ArcgFCTGw18tXWqPw9zg/edit?usp=sharing" class="panel-button navbar-brand arod-btn">Расписание</button>
-                <button class="panel-button">Кнопка 2</button>
-                <button class="panel-button">Кнопка 3</button>
+                <button href="https://docs.google.com/spreadsheets/d/1X83ygsOUW-tGSfunP-v4c65ArcgFCTGw18tXWqPw9zg/edit?usp=sharing" class="panel-button navbar-brand arod-btn">Расписание</button>
+                <button href="/" class="panel-button navbar-brand arod-btn">Королевства Ародов</button>
+                <button href="/" class="panel-button navbar-brand inaria-btn">Mimon Kaisorosu</button>
+                <button href="{% url 'main_FAQ_adv' %}" class="panel-button navbar-brand arod-btn">(Тут может быть ваша ролка)</button>
+                
             </div>
         
         
           </div>
-
+<!-- -->
         <div class="">
           
           <a href="https://docs.google.com/spreadsheets/d/1X83ygsOUW-tGSfunP-v4c65ArcgFCTGw18tXWqPw9zg/edit?usp=sharing" class="navbar-brand arod-btn" > <div class="bigfont-size"> Расписание </div> </a>
@@ -594,14 +596,14 @@ margin-left: 1vw;
         });
 
         // Обработчики для кнопок внутри панели
-        const buttons = document.querySelectorAll('.panel-button');
-        buttons.forEach((button, index) => {
-            button.addEventListener('click', function() {
-                console.log(`Нажата кнопка ${index + 1}`);
-                // Здесь можно добавить свою логику
-                alert(`Вы нажали кнопку ${index + 1}`);
-            });
-        });
+        //const buttons = document.querySelectorAll('.panel-button');
+        //buttons.forEach((button, index) => {
+        //    button.addEventListener('click', function() {
+        //        console.log(`Нажата кнопка ${index + 1}`);
+        //        // Здесь можно добавить свою логику
+        //        alert(`Вы нажали кнопку ${index + 1}`);
+        //    });
+        //});
 
         // Закрытие по клавише Escape
         document.addEventListener('keydown', function(e) {

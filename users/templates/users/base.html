@@ -225,6 +225,35 @@ font-size: 14px;
   margin-top: 15px;
 }
 
+/* ДОБАВЛЕННЫЕ СТИЛИ — для удобного расположения навигации справа и отступа контента */
+.nav-table-main {
+  background: #f0f5f5;      /* включаем фон */
+  padding: 20px 15px;       /* внутренние отступы */
+  border-radius: 16px 0 0 16px; /* скругление с левой стороны */
+  box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Отодвигаем основной контент вправо, чтобы он не залезал под навигацию */
+.container.p-3.my-3 {
+  margin-right: 480px;      /* ширина навигации (450px) + запас */
+}
+
+/* На маленьких экранах убираем фиксацию и отступ, чтобы блок не мешал */
+@media (max-width: 992px) {
+  .nav-table-main {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 16px;
+    right: auto;
+    top: auto;
+  }
+  .container.p-3.my-3 {
+    margin-right: 0;
+  }
+}
+
     </style>
 
 
@@ -278,9 +307,6 @@ font-size: 14px;
       </div>
     </div>
   </div>
-
-
-
   
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

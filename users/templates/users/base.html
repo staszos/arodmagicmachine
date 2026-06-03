@@ -209,11 +209,25 @@ font-size: 14px;
 }
 
 
+.nav-table-main{
+
+  position: fixed;   /* блок не двигается при прокрутке */
+  right: 0;          /* прижат к правому краю окна */
+  top: 20px;         /* отступ сверху (можно изменить) */
+  width: 200px;      /* ширина блока */
+  background: #333;  /* цвет фона */
+  color: white;      /* цвет текста */
+  padding: 15px;     /* внутренние отступы */
+  border-radius: 8px 0 0 8px; /* скругление углов (слева) */
+  box-shadow: -2px 2px 10px rgba(0,0,0,0.2); /* тень */
+  z-index: 1000;     /* чтобы перекрывал другие элементы */
+}
+
     </style>
 
 
 
-<div class="center ">
+<div class="nav-table-main">
 
           <a href="/" class="navbar-brand arod-btn"> <div class="arod-main-text bigfont-size" >Королевства Ародов </div></a> 
           <!-- <a href="/" class="navbar-brand arod-btn"> <div class="arod-main-text bigfont-size" >Сладкие Сны Некиты </div></a> -->

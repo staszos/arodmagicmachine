@@ -209,7 +209,7 @@ font-size: 14px;
 }
 
 
-/* === ОСНОВНЫЕ СТИЛИ ДЛЯ НАВИГАЦИИ (бумага/свиток) === */
+/* === НАВИГАЦИЯ В СТИЛЕ СТАРИННОГО СВИТКА === */
 .nav-table-main {
   position: fixed;
   right: 20px;              /* отступ от правого края */
@@ -218,39 +218,40 @@ font-size: 14px;
   flex-direction: column;
   margin-top: 15px;
 
-  /* Стиль «бумаги» / свитка */
-  background: #fffdf7;                 /* цвет старой бумаги */
-  border: 1px solid #e2d5b6;          /* нежная рамка */
-  border-radius: 16px;                /* мягкие углы */
-  padding: 20px 15px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.02);
-  backdrop-filter: blur(0px);
-  transition: box-shadow 0.2s;
+  /* Стиль старой бумаги / свитка */
+  background: #eeddbb;      /* цвет пергамента */
+  background-image: linear-gradient(145deg, rgba(230, 210, 170, 0.2) 0%, rgba(245, 235, 200, 0.6) 100%);
+  border: 1px solid #d4b886;
+  border-radius: 12px;
+  padding: 20px 18px;
+  box-shadow: none;         /* никаких теней */
+  font-family: 'Actinia', 'Georgia', serif;
 }
 
-/* Лёгкое затемнение при наведении (опционально) */
+/* Убираем любые наведения и лишние эффекты */
 .nav-table-main:hover {
-  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+  transform: none;
 }
 
-/* Контейнер основного контента (по умолчанию — отступ справа, чтобы не наезжать) */
+/* Основной контейнер контента — отступ справа для обычных мониторов */
 .container.p-3.my-3 {
-  margin-right: 480px;   /* ширина навигации + отступы */
+  margin-right: 480px;      /* ширина навигации + отступы */
 }
 
-/* === ШИРОКОФОРМАТНЫЕ МОНИТОРЫ (≥1400px) — центрируем основной блок === */
+/* Широкоформатные мониторы (≥1400px) — центрируем основной блок */
 @media (min-width: 1400px) {
   .container.p-3.my-3 {
-    width: calc(100% - 520px);   /* учитываем ширину навигации (450px + 20px справа + запас) */
-    max-width: 1200px;           /* не даём контенту стать слишком широким */
+    width: calc(100% - 520px);
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    /* убираем фиксированный правый отступ, центрирование работает через margin */
+    /* убираем фиксированный правый отступ, центрирование через auto */
     margin-right: auto;
   }
 }
 
-/* На маленьких экранах убираем фиксацию, чтобы не мешала */
+/* На маленьких экранах (до 992px) убираем фиксацию */
 @media (max-width: 992px) {
   .nav-table-main {
     position: static;
@@ -258,7 +259,7 @@ font-size: 14px;
     margin-top: 20px;
     right: auto;
     top: auto;
-    border-radius: 16px;
+    border-radius: 12px;
   }
   .container.p-3.my-3 {
     margin-right: 0;

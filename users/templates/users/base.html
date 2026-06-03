@@ -1,6 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
+
+
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,27 +21,27 @@
  
   
   <title>{% block title %} {% endblock %} </title>
+
+
+
 </head>
+
+
+
 <body>
 
   <style>  
 
+
+/*===================================== Остатки прошлого =====================================*/
 .audio_google_file{
   text-align: center;
 }
-.center{
-  text-align: center;
-}
-.right {
- 
-  text-align: right;
-} 
 img {
     max-height: 100%;
     max-width: 100%;
   }
-
-  a {
+    a {
     text-decoration: none;
     color: #6a4ec0;
     }
@@ -48,7 +51,6 @@ a:hover {
   text-decoration: none;
   color: #6a4ec0;
 }
-
 
 .movie-bg {
     
@@ -71,13 +73,26 @@ div.pdf_link{
 
     text-align: center;
 }
-.center {
-    text-align: center;
-}
+
 .ans_input{
 
     border-radius: 10px;
 }
+/*===================================== Остатки прошлого =====================================*/
+
+
+/*===================================== Не ебу зачем было надо =====================================*/
+
+
+
+.center{
+  text-align: center;
+}
+
+.right {
+ 
+  text-align: right;
+} 
 
 .footnote {
   color: #7F7F7F; /* серый, не чёрный */
@@ -123,19 +138,52 @@ div.pdf_link{
 }
 
 
+.upmargin {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.back-main-container-fix-right-top {
+  position: fixed;           /* Фиксируем элемент на странице */
+  top: 0;                   /* Размещаем в верхней части */
+  right: 0;                 /* Размещаем в правой части */
+  margin: 0px;             /* Отступы от края (по желанию) */
+  z-index: 1000;            /* Уровень слоёв — чтобы изображение было поверх контента */
+  width: 350px;             /* Ширина изображения (по желанию, можно задать в %) */
+  height: auto;             /* Сохраняем пропорции */
+}
+
+.no-break {
+ word-break: keep-all;    /* не разрывать слова */
+  hyphens: none;           /* не ставить дефисы */
+  white-space: normal;     /* разрешать перенос строк между словами */
+}
+
+/*===================================== Не ебу зачем было надо =====================================*/
 
 
-
-
+/*===================================== Шрифты =====================================*/
 @font-face {
   font-family: 'Actinia'; /* Имя, под которым шрифт будет доступен в CSS       <!-- Шрифт взят у Black Fox   --> */
   src: url('https://oeycfg7fhavle8jh.public.blob.vercel-storage.com/Arod/Metamorphous.ttf') format('woff2'),
        url('https://oeycfg7fhavle8jh.public.blob.vercel-storage.com/Arod/Metamorphous.ttf') format('woff');
   font-weight: normal;
   font-style: normal;
- 
 }
 
+.bigfont-size {
+font-size: 24px;
+}
+.midfont-size {
+font-size: 18px;
+}
+.smallfont-size {
+font-size: 14px;
+}
+/*===================================== Шрифты =====================================*/
+
+
+/*===================================== Кнопки ========================================*/
 
 .arod-btn{
   background-color: #7d4edb; /* мягкий сиренево‑фиолетовый */
@@ -147,9 +195,7 @@ div.pdf_link{
   border-radius: 8px; /* скруглённые углы */
   text-decoration: none; /* убрать подчёркивание */
   font-family: 'Actinia', sans-serif;     /* Шрифт взят у Black Fox */
-
   font-weight: 700;
- 
   letter-spacing: 0.5px;
   
   /* Тень для объёма */
@@ -172,59 +218,9 @@ div.pdf_link{
 
 .arod-main-text {
 color: #c9c60f; 
-
 }
 
-.bigfont-size {
-font-size: 24px;
-}
-.midfont-size {
-font-size: 18px;
-}
-.smallfont-size {
-font-size: 14px;
-}
-
-.upmargin {
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-
-
-.back-main-container-fix-right-top {
-  position: fixed;           /* Фиксируем элемент на странице */
-  top: 0;                   /* Размещаем в верхней части */
-  right: 0;                 /* Размещаем в правой части */
-  margin: 0px;             /* Отступы от края (по желанию) */
-  z-index: 1000;            /* Уровень слоёв — чтобы изображение было поверх контента */
-  width: 350px;             /* Ширина изображения (по желанию, можно задать в %) */
-  height: auto;             /* Сохраняем пропорции */
-}
-
-.no-break {
- word-break: keep-all;    /* не разрывать слова */
-  hyphens: none;           /* не ставить дефисы */
-  white-space: normal;     /* разрешать перенос строк между словами */
-}
-
-
-.nav-table-main{
-
-  position: fixed;   /* блок не двигается при прокрутке */
-  right: 0%;          /* прижат к правому краю окна */
-  top: 40px;         /* отступ сверху (можно изменить) */
-  width: 450px;      /* ширина блока */
-  /*background: #f0f5f5; */ /* цвет фона */
-   /*padding: 2px;     внутренние отступы 
-  margin: 10px;
-  /* border-radius: 8px 0 0 8px;  скругление углов (слева) */
-  /*box-shadow: -2px 2px 10px rgba(0,0,0,0.2);  тень */
-  /*z-index: 1000;      чтобы перекрывал другие элементы */
-  flex-direction: column;
-  margin-top: 15px;
-}
-
+/*===================================== Кнопки ========================================*/
 
     </style>
 
@@ -264,6 +260,8 @@ font-size: 14px;
                 </div>
             </div>
         </nav>
+
+
         <!--Any flash messages pop up in any page because this is the base template-->
         {% if messages %}
           <div class="alert alert-dismissible" role="alert">
@@ -276,8 +274,11 @@ font-size: 14px;
           </div>
         {% endif %}
         {% block content %}{% endblock %}
+
       </div>
+
     </div>
+
   </div>
 
 
@@ -292,9 +293,12 @@ font-size: 14px;
     <!-- A plugin for password show/hide  -->
     <script src="https://unpkg.com/bootstrap-show-password@1.2.1/dist/bootstrap-show-password.min.js"></script>
 
+
+
+
         <div class="footnote">
 За всей подробной информацией обращайтесь к вашему ГМу или лечащему врачу.
-</div>
+        </div>
 
 
 

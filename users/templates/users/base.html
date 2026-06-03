@@ -219,8 +219,41 @@ font-size: 14px;
 .arod-main-text {
 color: #c9c60f; 
 }
+
+
 .inaria-main-text {
 color: #8f1505; 
+}
+
+.inaria-btn{
+  background-color: #100e99; /* мягкий сиренево‑фиолетовый */
+  /* остальные стили (padding, border-radius и т.д.) — как в предыдущем примере */
+  
+  /* Оформление кнопки */
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px; /* скруглённые углы */
+  text-decoration: none; /* убрать подчёркивание */
+  font-family: 'Actinia', sans-serif;     /* Шрифт взят у Black Fox */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  
+  /* Тень для объёма */
+  box-shadow: 0 2px 4px rgba(123, 94, 201, 0.3);
+  
+  /* Плавный переход при наведении */
+  transition: all 0.3s ease;
+}
+
+.inaria-btn:hover {
+  background-color: #0e0c7a; /* чуть темнее при наведении */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(106, 78, 192, 0.4);
+}
+
+.inaria-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /*===================================== Кнопки ========================================*/
@@ -244,7 +277,7 @@ float: right;
 
           <a href="/" class="navbar-brand arod-btn"> <div class="arod-main-text bigfont-size" >Королевства Ародов </div></a> 
           <br><br>
-          <a href="/" class="navbar-brand arod-btn"> <div class="inaria-main-text bigfont-size" >Mimon Kaisorosu </div></a> 
+          <a href="/" class="navbar-brand inaria-btn"> <div class="inaria-main-text bigfont-size" >Mimon Kaisorosu </div></a> 
           <br><br>
           <a href="{% url 'main_FAQ_adv' %}" class="navbar-brand arod-btn" > <div class="bigfont-size"> (Тут может быть ваша ролка) </div> </a>
           <br><br>

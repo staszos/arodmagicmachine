@@ -366,7 +366,244 @@ margin-left: 1vw;
 
 /*===================================== Новодел (03.06.2026) ========================================*/
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #D4C5A9;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Основной контейнер для выпадающего блока */
+        .dropdown-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* Кнопка-триггер (квадратик) */
+        .dropdown-trigger {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8B7355 0%, #6B5340 100%);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dropdown-trigger:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .dropdown-trigger:active {
+            transform: scale(0.95);
+        }
+
+        /* Иконка внутри кнопки */
+        .dropdown-icon {
+            width: 30px;
+            height: 30px;
+            fill: #F5EBD7;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-trigger.active .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Выпадающая панель */
+        .dropdown-panel {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 250px;
+            background: linear-gradient(to bottom, #F5EBD7 0%, #E8DCC4 100%);
+            border: 2px solid #8B7355;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.9);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .dropdown-panel.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Заголовок панели */
+        .panel-header {
+            text-align: center;
+            color: #5a4a3a;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 1px solid #8B7355;
+            padding-bottom: 10px;
+        }
+
+        /* Контейнер для кнопок */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Стили кнопок внутри панели */
+        .panel-button {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #C9B896 0%, #B8A682 100%);
+            border: 1px solid #8B7355;
+            border-radius: 6px;
+            color: #3d2e1f;
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .panel-button:hover {
+            background: linear-gradient(135deg, #D4C5A9 0%, #C9B896 100%);
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .panel-button:active {
+            transform: translateX(2px);
+        }
+
+        /* Дополнительный декоративный элемент */
+        .panel-decoration {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #8B7355;
+        }
+
+        /* Анимация появления */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-panel.open {
+            animation: slideIn 0.3s ease-out;
+        }
+
+
     </style>
+
+    <!-- Пример контента страницы -->
+    <div style="padding: 40px;">
+        <h1 style="color: #5a4a3a; margin-bottom: 20px;">Пример страницы</h1>
+        <p style="line-height: 1.8; color: #3d2e1f;">
+            Это пример контента страницы. Выпадающий блок находится в правом нижнем углу 
+            и не влияет на расположение этого текста.
+        </p>
+    </div>
+
+    <!-- Выпадающий виджет -->
+    <div class="dropdown-widget">
+        <!-- Выпадающая панель -->
+        <div class="dropdown-panel" id="dropdownPanel">
+            <div class="panel-decoration"></div>
+            <div class="panel-header">Меню</div>
+            <div class="button-container">
+                <button class="panel-button">Кнопка 1</button>
+                <button class="panel-button">Кнопка 2</button>
+                <button class="panel-button">Кнопка 3</button>
+            </div>
+        </div>
+
+        <!-- Кнопка-триггер -->
+        <button class="dropdown-trigger" id="dropdownTrigger">
+            <svg class="dropdown-icon" viewBox="0 0 24 24">
+                <path d="M7 10l5 5 5-5z"/>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // Получаем элементы
+        const trigger = document.getElementById('dropdownTrigger');
+        const panel = document.getElementById('dropdownPanel');
+
+        // Функция переключения состояния
+        function toggleDropdown() {
+            panel.classList.toggle('open');
+            trigger.classList.toggle('active');
+        }
+
+        // Обработчик клика на кнопку-триггер
+        trigger.addEventListener('click', function(e) {
+            e.stopPropagation(); // Предотвращаем всплытие события
+            toggleDropdown();
+        });
+
+        // Закрытие при клике вне панели
+        document.addEventListener('click', function(e) {
+            if (!trigger.contains(e.target) && !panel.contains(e.target)) {
+                panel.classList.remove('open');
+                trigger.classList.remove('active');
+            }
+        });
+
+        // Предотвращаем закрытие при клике внутри панели
+        panel.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Обработчики для кнопок внутри панели
+        const buttons = document.querySelectorAll('.panel-button');
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', function() {
+                console.log(`Нажата кнопка ${index + 1}`);
+                // Здесь можно добавить свою логику
+                alert(`Вы нажали кнопку ${index + 1}`);
+            });
+        });
+
+        // Закрытие по клавише Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && panel.classList.contains('open')) {
+                panel.classList.remove('open');
+                trigger.classList.remove('active');
+            }
+        });
+    </script>
+
+
+
+
+
+
 
 
 <div class="left-table">

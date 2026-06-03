@@ -208,6 +208,12 @@ font-size: 14px;
   white-space: normal;     /* разрешать перенос строк между словами */
 }
 
+.nav {
+
+  position: fixed;   /* блок не двигается при прокрутке */
+  right: 0;          /* прижат к правому краю окна */
+}
+
 
     </style>
 
@@ -221,10 +227,10 @@ font-size: 14px;
       <div class="col-md-12">
         <nav class="navbar navbar-expand-md navbar-light " style="background-color: #f0f5f5">
 
-        <div class="right ">
+        <div class="right">
 
           <a href="/" class="navbar-brand arod-btn"> <div class="arod-main-text bigfont-size" >Королевства Ародов </div></a> 
-          <a href="/" class="navbar-brand arod-btn"> <div class="arod-main-text bigfont-size" >Инария </div></a> 
+          <a href="/" class="navbar-brand arod-btn"> <div class="arod-main-text bigfont-size" >Сладкие Сны Некиты </div></a> 
           <a href="{% url 'main_FAQ_adv' %}" class="navbar-brand arod-btn" > <div class="bigfont-size"> (Тут может быть ваша ролка) </div> </a>
             
         </div>

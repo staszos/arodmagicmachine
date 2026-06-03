@@ -19,7 +19,7 @@
   
   <title>{% block title %} {% endblock %} </title>
 </head>
-<body>
+<body style="margin:0; padding:0; background:#f5f0e5;">
 
   <style>  
 
@@ -30,7 +30,6 @@
   text-align: center;
 }
 .right {
- 
   text-align: right;
 } 
 img {
@@ -38,20 +37,17 @@ img {
     max-width: 100%;
   }
 
-  a {
+a {
     text-decoration: none;
     color: #6a4ec0;
-    }
+}
 
 a:hover {
- 
   text-decoration: none;
   color: #6a4ec0;
 }
 
-
 .movie-bg {
-    
     width: 750px;
 }
 
@@ -65,102 +61,79 @@ div.pdf {
    top: -42px;
    left: 0;
    width:1200; height:800;
-
-   }
+}
 div.pdf_link{
-
     text-align: center;
 }
 .center {
     text-align: center;
 }
 .ans_input{
-
     border-radius: 10px;
 }
 
 .footnote {
-  color: #7F7F7F; /* серый, не чёрный */
-  font-size: 0.875rem; /* ~14px при базовом 16px */
+  color: #7F7F7F;
+  font-size: 0.875rem;
   line-height: 1.5;
   font-family: Arial, sans-serif;
-  font-style: normal; /* обычно без курсива, но можно и с ним */
+  font-style: normal;
   margin: 16px 0 8px;
   text-align: center;
- 
 }
 
 .limiter {
-    
     hyphens: auto;
     word-break: break-all;
     padding: 5px;
 }
 
-
 .flex-container {
   display: flex;
-  align-items: flex-start; /* выравнивание по верху */
-  gap: 15px; /* расстояние между элементами */
+  align-items: flex-start;
+  gap: 15px;
 }
 
 .flex-image {
-  max-width: 300px; /* ограничение ширины изображения */
+  max-width: 300px;
   height: auto;
 }
 
 .flex-text {
-  flex: 1; /* текст занимает оставшееся пространство */
+  flex: 1;
 }
-
 
 .float-left-image {
   float: left;
-  margin-right: 20px; /* отступ между картинкой и текстом */
-  margin-bottom: 10px; /* отступ снизу, чтобы текст не «прилипал» */
-  max-width: 200px;    /* ограничение ширины */
-  height: auto;        /* сохранение пропорций */
+  margin-right: 20px;
+  margin-bottom: 10px;
+  max-width: 200px;
+  height: auto;
 }
 
-
-
-
-
-
 @font-face {
-  font-family: 'Actinia'; /* Имя, под которым шрифт будет доступен в CSS       <!-- Шрифт взят у Black Fox   --> */
+  font-family: 'Actinia';
   src: url('https://oeycfg7fhavle8jh.public.blob.vercel-storage.com/Arod/Metamorphous.ttf') format('woff2'),
        url('https://oeycfg7fhavle8jh.public.blob.vercel-storage.com/Arod/Metamorphous.ttf') format('woff');
   font-weight: normal;
   font-style: normal;
- 
 }
 
-
 .arod-btn{
-  background-color: #7d4edb; /* мягкий сиренево‑фиолетовый */
-  /* остальные стили (padding, border-radius и т.д.) — как в предыдущем примере */
-  
-  /* Оформление кнопки */
+  background-color: #7d4edb;
   display: inline-block;
   padding: 10px 20px;
-  border-radius: 8px; /* скруглённые углы */
-  text-decoration: none; /* убрать подчёркивание */
-  font-family: 'Actinia', sans-serif;     /* Шрифт взят у Black Fox */
-
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Actinia', sans-serif;
   font-weight: 700;
- 
   letter-spacing: 0.5px;
-  
-  /* Тень для объёма */
   box-shadow: 0 2px 4px rgba(123, 94, 201, 0.3);
-  
-  /* Плавный переход при наведении */
   transition: all 0.3s ease;
 }
 
 .arod-btn:hover {
-  background-color: #6a4ec0; /* чуть темнее при наведении */
+  background-color: #6a4ec0;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(106, 78, 192, 0.4);
 }
@@ -171,154 +144,151 @@ div.pdf_link{
 }
 
 .arod-main-text {
-color: #c9c60f; 
-
+  color: #c9c60f; 
 }
 
-.bigfont-size {
-font-size: 24px;
-}
-.midfont-size {
-font-size: 18px;
-}
-.smallfont-size {
-font-size: 14px;
-}
+.bigfont-size { font-size: 24px; }
+.midfont-size { font-size: 18px; }
+.smallfont-size { font-size: 14px; }
 
 .upmargin {
   margin-top: 10px;
   margin-bottom: 15px;
 }
 
-
-
 .back-main-container-fix-right-top {
-  position: fixed;           /* Фиксируем элемент на странице */
-  top: 0;                   /* Размещаем в верхней части */
-  right: 0;                 /* Размещаем в правой части */
-  margin: 0px;             /* Отступы от края (по желанию) */
-  z-index: 1000;            /* Уровень слоёв — чтобы изображение было поверх контента */
-  width: 350px;             /* Ширина изображения (по желанию, можно задать в %) */
-  height: auto;             /* Сохраняем пропорции */
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0px;
+  z-index: 1000;
+  width: 350px;
+  height: auto;
 }
 
 .no-break {
- word-break: keep-all;    /* не разрывать слова */
-  hyphens: none;           /* не ставить дефисы */
-  white-space: normal;     /* разрешать перенос строк между словами */
+  word-break: keep-all;
+  hyphens: none;
+  white-space: normal;
 }
 
+/* ========== НОВАЯ СТРУКТУРА ========== */
+/* Общий flex-контейнер для всей страницы */
+.page-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end; /* навигация справа, контент слева */
+  align-items: flex-start;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 30px;
+}
 
-/* === НАВИГАЦИЯ В СТИЛЕ СТАРИННОГО СВИТКА === */
+/* Навигация (свиток) - теперь не fixed, а обычный блок внутри flex */
 .nav-table-main {
-  position: fixed;
-  right: 20px;              /* отступ от правого края */
-  top: 40px;
-  width: 450px;
-  flex-direction: column;
-  margin-top: 15px;
-
-  /* Стиль старой бумаги / свитка */
-  background: #eeddbb;      /* цвет пергамента */
-  background-image: linear-gradient(145deg, rgba(230, 210, 170, 0.2) 0%, rgba(245, 235, 200, 0.6) 100%);
-  border: 1px solid #d4b886;
-  border-radius: 12px;
-  padding: 20px 18px;
-  box-shadow: none;         /* никаких теней */
+  flex: 0 0 280px;          /* фиксированная ширина, не растягивается */
+  position: sticky;         /* липкая при прокрутке, но не перекрывает */
+  top: 20px;
+  
+  /* Оформление "старинный свиток" */
+  background: #f2e3c9;
+  background-image: repeating-linear-gradient(45deg, rgba(200,170,110,0.1) 0px, rgba(200,170,110,0.1) 2px, transparent 2px, transparent 8px);
+  border: 1px solid #cfb87c;
+  border-radius: 16px;
+  padding: 20px 15px;
+  box-shadow: none;
   font-family: 'Actinia', 'Georgia', serif;
 }
 
-/* Убираем любые наведения и лишние эффекты */
-.nav-table-main:hover {
-  box-shadow: none;
-  transform: none;
+/* Основной контент (тот самый container из Bootstrap) */
+.content-main {
+  flex: 1 1 auto;           /* занимает всё оставшееся место */
+  min-width: 0;             /* предотвращает переполнение */
+  background: transparent;
 }
 
-/* Основной контейнер контента — отступ справа для обычных мониторов */
-.container.p-3.my-3 {
-  margin-right: 480px;      /* ширина навигации + отступы */
-}
-
-/* Широкоформатные мониторы (≥1400px) — центрируем основной блок */
-@media (min-width: 1400px) {
-  .container.p-3.my-3 {
-    width: calc(100% - 520px);
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    /* убираем фиксированный правый отступ, центрирование через auto */
-    margin-right: auto;
-  }
-}
-
-/* На маленьких экранах (до 992px) убираем фиксацию */
+/* Адаптация под маленькие экраны */
 @media (max-width: 992px) {
+  .page-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
   .nav-table-main {
     position: static;
+    flex: auto;
     width: 100%;
-    margin-top: 20px;
-    right: auto;
-    top: auto;
-    border-radius: 12px;
+    order: -1;              /* чтобы навигация была сверху на мобилках */
   }
-  .container.p-3.my-3 {
-    margin-right: 0;
+  .content-main {
+    width: 100%;
   }
 }
 
-    </style>
+/* Чтобы контент внутри .content-main не ломал bootstrap-сетку, просто наследуем */
+.content-main .container.p-3.my-3 {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
+}
 
+  </style>
 
+<!-- Новая обёртка -->
+<div class="page-wrapper">
+  
+  <!-- Блок навигации (свиток) -->
+  <div class="nav-table-main">
+    <a href="/" class="navbar-brand arod-btn"> 
+      <div class="arod-main-text bigfont-size">Королевства Ародов</div>
+    </a> 
+    <br><br>
+    <a href="/" class="navbar-brand arod-btn"> 
+      <div class="arod-main-text bigfont-size">Mimon Kaisorosu</div>
+    </a> 
+    <br><br>
+    <a href="{% url 'main_FAQ_adv' %}" class="navbar-brand arod-btn"> 
+      <div class="bigfont-size"> (Тут может быть ваша ролка) </div>
+    </a>
+    <br><br>
+  </div>
 
-<div class="nav-table-main">
-
-          <a href="/" class="navbar-brand arod-btn"> <div class="arod-main-text bigfont-size" >Королевства Ародов </div></a> 
-          <br><br>
-          <a href="/" class="navbar-brand arod-btn"> <div class="arod-main-text bigfont-size" >Mimon Kaisorosu </div></a> 
-          <br><br>
-          <a href="{% url 'main_FAQ_adv' %}" class="navbar-brand arod-btn" > <div class="bigfont-size"> (Тут может быть ваша ролка) </div> </a>
-          <br><br>
-            
-        </div>
-
-
-  <div class="container p-3 my-3">
-    <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-expand-md navbar-light " style="background-color: #f0f5f5">
-
-        
-
-
+  <!-- Основной блок контента -->
+  <div class="content-main">
+    <div class="container p-3 my-3">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-md navbar-light" style="background-color: #f0f5f5">
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ml-auto">
-                  {% if user.is_authenticated %}
-                    <a href="{% url 'users-profile' %}" class="nav-item nav-link">Profile</a>
-                    
-                  
-                  {% endif %}
-
-                </div>
+              <div class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                  <a href="{% url 'users-profile' %}" class="nav-item nav-link">Profile</a>
+                {% endif %}
+              </div>
             </div>
-        </nav>
-        <!--Any flash messages pop up in any page because this is the base template-->
-        {% if messages %}
-          <div class="alert alert-dismissible" role="alert">
-            {% for message in messages %}
-              <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-            {% endfor %}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        {% endif %}
-        {% block content %}{% endblock %}
+          </nav>
+          {% if messages %}
+            <div class="alert alert-dismissible" role="alert">
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+              {% endfor %}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endif %}
+          {% block content %}{% endblock %}
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

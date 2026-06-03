@@ -366,173 +366,158 @@ margin-left: 1vw;
 
 /*===================================== Новодел (03.06.2026) ========================================*/
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/*===================================== Панелька ========================================*/
 
-        body {
-            min-height: 100vh;
-            background-color: #D4C5A9;
-            font-family: 'Georgia', serif;
-        }
 
-        /* Основной контейнер для выпадающего блока */
-        .dropdown-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
+/* Основной контейнер для выпадающего блока */
+.dropdown-widget {
+    position: fixed;
+    top: 20px;           /* Изменено с bottom на top */
+    right: 20px;
+    z-index: 1000;
+}
 
-        /* Кнопка-триггер (квадратик) */
-        .dropdown-trigger {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #8B7355 0%, #6B5340 100%);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
+/* Кнопка-триггер (квадратик) */
+.dropdown-trigger {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #8B7355 0%, #6B5340 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
 
-        .dropdown-trigger:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-        }
+.dropdown-trigger:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
 
-        .dropdown-trigger:active {
-            transform: scale(0.95);
-        }
+.dropdown-trigger:active {
+    transform: scale(0.95);
+}
 
-        /* Иконка внутри кнопки */
-        .dropdown-icon {
-            width: 30px;
-            height: 30px;
-            fill: #F5EBD7;
-            transition: transform 0.3s ease;
-        }
+/* Иконка внутри кнопки */
+.dropdown-icon {
+    width: 30px;
+    height: 30px;
+    fill: #F5EBD7;
+    transition: transform 0.3s ease;
+}
 
-        .dropdown-trigger.active .dropdown-icon {
-            transform: rotate(180deg);
-        }
+.dropdown-trigger.active .dropdown-icon {
+    transform: rotate(180deg);
+}
 
-        /* Выпадающая панель */
-        .dropdown-panel {
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            width: 250px;
-            background: linear-gradient(to bottom, #F5EBD7 0%, #E8DCC4 100%);
-            border: 2px solid #8B7355;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px) scale(0.9);
-            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
+/* Выпадающая панель */
+.dropdown-panel {
+    position: absolute;
+    top: 70px;             /* Изменено с bottom на top */
+    right: 0;
+    width: 250px;
+    background: linear-gradient(to bottom, #F5EBD7 0%, #E8DCC4 100%);
+    border: 2px solid #8B7355;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px) scale(0.9);  /* Изменено направление анимации */
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
 
-        .dropdown-panel.open {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0) scale(1);
-        }
+.dropdown-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
 
-        /* Заголовок панели */
-        .panel-header {
-            text-align: center;
-            color: #5a4a3a;
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            font-weight: bold;
-            border-bottom: 1px solid #8B7355;
-            padding-bottom: 10px;
-        }
+/* Заголовок панели */
+.panel-header {
+    text-align: center;
+    color: #5a4a3a;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #8B7355;
+    padding-bottom: 10px;
+}
 
-        /* Контейнер для кнопок */
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+/* Контейнер для кнопок */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-        /* Стили кнопок внутри панели */
-        .panel-button {
-            padding: 12px 20px;
-            background: linear-gradient(135deg, #C9B896 0%, #B8A682 100%);
-            border: 1px solid #8B7355;
-            border-radius: 6px;
-            color: #3d2e1f;
-            font-family: 'Georgia', serif;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-        }
+/* Стили кнопок/ссылок внутри панели */
+.panel-button {
+    display: block;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #C9B896 0%, #B8A682 100%);
+    border: 1px solid #8B7355;
+    border-radius: 6px;
+    color: #3d2e1f;
+    font-family: 'Georgia', serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
 
-        .panel-button:hover {
-            background: linear-gradient(135deg, #D4C5A9 0%, #C9B896 100%);
-            transform: translateX(5px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        }
+.panel-button:hover {
+    background: linear-gradient(135deg, #D4C5A9 0%, #C9B896 100%);
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    color: #3d2e1f;
+}
 
-        .panel-button:active {
-            transform: translateX(2px);
-        }
+.panel-button:active {
+    transform: translateX(2px);
+}
 
-        /* Дополнительный декоративный элемент */
-        .panel-decoration {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #8B7355;
-        }
+.panel-button:visited {
+    color: #3d2e1f;
+}
 
-        /* Анимация появления */
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* Декоративный элемент (стрелочка) */
+.panel-decoration {
+    position: absolute;
+    top: -10px;            /* Осталось сверху, так как панель теперь раскрывается вниз */
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #8B7355;
+}
 
-        .dropdown-panel.open {
-            animation: slideIn 0.3s ease-out;
-        }
+/* Анимация появления */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);  /* Изменено направление */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+.dropdown-panel.open {
+    animation: slideIn 0.3s ease-out;
+}
+/*===================================== Панелька ========================================*/
 
     </style>
-
-
-
-
-
-
-
-
-
-
-<div class="right-table">
-
-  
-  <nav class="navbar navbar-expand-md navbar-light container paper-section" > <!-- style="background-color: #f0f5f5" -->
 
     <!-- ========================= Выпадающий виджет ================================================ -->
     <div class="dropdown-widget">
@@ -610,6 +595,18 @@ margin-left: 1vw;
     </script>
 
 <!-- ========================= Выпадающий виджет ================================================ -->
+
+
+
+
+
+
+
+
+<div class="right-table">
+
+  
+  <nav class="navbar navbar-expand-md navbar-light container paper-section" > <!-- style="background-color: #f0f5f5" -->
 
 
 
